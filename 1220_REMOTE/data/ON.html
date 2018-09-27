@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>1220_REMOTO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <p class="title">1220_REMOTO</p>
@@ -13,28 +14,29 @@
     };
   </script>
   <style>
-    body{
-     background-color: #F7F7F7;
-     font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
-    }
     .title{
-      font-size: 40px;
+      font-size: 20px;
       margin-top: 0%;
       font-weight: bold;
       color: #FFFFFF;
       background: #333333;
+      width: 100%;
+    }
+    body{
+      background-color: #F7F7F7;
     }
     #switch{
       display: block;
       text-decoration: none;
       color: #D15352;
-      width: 480px;
-      height: 480px;
-      line-height: 480px;
+      width: 360px;
+      height: 360px;
+      line-height: 360px;
       border-radius: 50%;
-      margin-top: 45%;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 240px;
+      margin-bottom: auto;
       background: #FFFFFF;
       border: solid 10px #D15352;
       text-align: center;
@@ -48,6 +50,34 @@
       border: solid 10px #D15352;
       color: #FFFFFF;
       background: #D15352;
+    }
+    @media screen and (max-width: 600px) {
+      #switch{
+        display: block;
+        text-decoration: none;
+        color: #D15352;
+        width: 160px;
+        height: 160px;
+        line-height: 160px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 160px;
+        margin-bottom: auto;
+        background: #FFFFFF;
+        border: solid 5px #D15352;
+        text-align: center;
+        font-size: 40px;
+        vertical-align: middle;
+        overflow: hidden;
+        font-weight: bold;
+        transition: .2s;
+      }
+      #switch:hover {
+        border: solid 5px #D15352;
+        color: #FFFFFF;
+        background: #D15352;
+      }
     }
   </style>
 </html>
