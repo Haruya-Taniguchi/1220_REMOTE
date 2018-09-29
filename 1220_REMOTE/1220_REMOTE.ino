@@ -1,8 +1,10 @@
 #include <Servo.h>
 #define SERVO_PIN 2
+#define BUTTON_PIN 14
 Servo servo;
 
 int bgn;
+bool pbutton, button;
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
@@ -21,6 +23,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.begin( ssid, pass);
 
+  pinMode(BUTTON_PIN, OUTPUT);
   servo.detach();
 
   while ( WiFi.status() != WL_CONNECTED) {
@@ -41,39 +44,11 @@ void setup() {
   server.begin();
 
   server.on("/ON", []() {
-    light_pow = true;
-    bgn = millis();
-
-    String tmp;
-    //htmlファイルの読み込み
-    File index = SPIFFS.open("/ON.html", "r");
-    if (!index)
-      Serial.println("file open failed");
-    else {
-      tmp = index.readString();//htmlファイルをstringで読み込み
-      index.close();
-    }
-
-    server.send(200, "text/html", tmp);
-    servo.attach(SERVO_PIN);
+    Turn_On();
   } );
 
   server.on("/OFF", []() {
-    light_pow = false;
-    bgn = millis();
-
-    String tmp;
-
-    File index = SPIFFS.open("/OFF.html", "r");
-    if (!index)
-      Serial.println("file open failed");
-    else {
-      tmp = index.readString();
-      index.close();
-    }
-
-    server.send(200, "text/html", tmp);
-    servo.attach(SERVO_PIN);
+    Turn_Off();
   } );
 
   server.on("/", []() {
@@ -99,7 +74,17 @@ void setup() {
 void loop() {
   server.handleClient();
 
-  if ((millis() - bgn) > 1000) {
+  pbutton = button;
+  button = digitalRead(BUTTON_PIN);
+
+  if (!pbutton && button && !light_pow) {
+    Turn_On();
+  }else
+  if(!pbutton && button && light_pow){
+    Turn_Off();
+  }
+
+  if ((millis() - bgn) > 2000) {
     servo.detach();
   }
 
@@ -109,3 +94,40 @@ void loop() {
     servo.write(90);
   }
 }
+
+void Turn_On() {
+  light_pow = true;
+  bgn = millis();
+
+  String tmp;
+
+  File index = SPIFFS.open("/ON.html", "r");
+  if (!index)
+    Serial.println("file open failed");
+  else {
+    tmp = index.readString();
+    index.close();
+  }
+
+  server.send(200, "text/html", tmp);
+  servo.attach(SERVO_PIN);
+}
+
+void Turn_Off() {
+  light_pow = false;
+  bgn = millis();
+
+  String tmp;
+
+  File index = SPIFFS.open("/OFF.html", "r");
+  if (!index)
+    Serial.println("file open failed");
+  else {
+    tmp = index.readString();
+    index.close();
+  }
+
+  server.send(200, "text/html", tmp);
+  servo.attach(SERVO_PIN);
+}
+
