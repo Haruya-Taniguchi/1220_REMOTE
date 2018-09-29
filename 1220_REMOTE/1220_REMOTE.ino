@@ -1,8 +1,8 @@
 #include <Servo.h>
+#define SERVO_PIN 2
 Servo servo;
-bool servo_pow = false;
+
 int bgn;
-#define SERVO_POW 16
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
@@ -21,8 +21,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.begin( ssid, pass);
 
-  servo.attach(2);
-  pinMode(SERVO_POW, OUTPUT);
+  servo.detach();
 
   while ( WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -43,7 +42,6 @@ void setup() {
 
   server.on("/ON", []() {
     light_pow = true;
-    servo_pow = true;
     bgn = millis();
 
     String tmp;
@@ -57,11 +55,11 @@ void setup() {
     }
 
     server.send(200, "text/html", tmp);
+    servo.attach(SERVO_PIN);
   } );
 
   server.on("/OFF", []() {
     light_pow = false;
-    servo_pow = true;
     bgn = millis();
 
     String tmp;
@@ -75,6 +73,7 @@ void setup() {
     }
 
     server.send(200, "text/html", tmp);
+    servo.attach(SERVO_PIN);
   } );
 
   server.on("/", []() {
@@ -100,14 +99,10 @@ void setup() {
 void loop() {
   server.handleClient();
 
-  if (servo_pow) {
-    digitalWrite(SERVO_POW, HIGH);
-  } else {
-    digitalWrite(SERVO_POW, LOW);
+  if ((millis() - bgn) > 2000) {
+    servo.detach();
   }
-  if ((millis() - bgn) > 2000 && servo_pow) {
-    servo_pow = false;
-  }
+
   if (light_pow) {
     servo.write(50);
   } else {
