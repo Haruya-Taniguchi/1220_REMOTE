@@ -99,7 +99,7 @@ void setup() {
 void loop() {
   server.handleClient();
 
-  if ((millis() - bgn) > 2000) {
+  if ((millis() - bgn) > 1000) {
     servo.detach();
   }
 
