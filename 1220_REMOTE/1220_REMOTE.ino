@@ -87,12 +87,6 @@ void loop() {
   if ((millis() - bgn) > 2000) {
     servo.detach();
   }
-
-  if (light_pow) {
-    servo.write(50);
-  } else {
-    servo.write(90);
-  }
 }
 
 void Turn_On() {
@@ -108,9 +102,9 @@ void Turn_On() {
     tmp = index.readString();
     index.close();
   }
-
-  server.send(200, "text/html", tmp);
   servo.attach(SERVO_PIN);
+  servo.write(50);
+  server.send(200, "text/html", tmp);
   //Serial.println("Turn ON!");
 }
 
@@ -127,9 +121,9 @@ void Turn_Off() {
     tmp = index.readString();
     index.close();
   }
-
-  server.send(200, "text/html", tmp);
   servo.attach(SERVO_PIN);
+  servo.write(90);
+  server.send(200, "text/html", tmp);
   //Serial.println("Turn OFF!");
 }
 
