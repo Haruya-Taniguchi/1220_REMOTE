@@ -111,6 +111,7 @@ void Turn_On() {
 
   server.send(200, "text/html", tmp);
   servo.attach(SERVO_PIN);
+  //Serial.println("Turn ON!");
 }
 
 void Turn_Off() {
@@ -129,5 +130,6 @@ void Turn_Off() {
 
   server.send(200, "text/html", tmp);
   servo.attach(SERVO_PIN);
+  //Serial.println("Turn OFF!");
 }
 
