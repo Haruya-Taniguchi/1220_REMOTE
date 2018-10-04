@@ -2,15 +2,21 @@
 <html>
   <head>
     <title>1220_REMOTO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   </head>
   <body>
     <p class="title">1220_REMOTO</p>
     <p id="switch" ontouchstart="">ON</p>
+    <div id="github_link">
+    <a haref="https://github.com/Haruya-Taniguchi">Author Taniharu</a>
+    </div>
   </body>
   <script>
     document.getElementById("switch").onclick = function(){
       location.href = "/OFF";
+    };
+    document.getElementById("github_link").onclick = function(){
+        location.href = "https://github.com/Haruya-Taniguchi"
     };
   </script>
   <style>
@@ -54,6 +60,9 @@
       color: #FFFFFF;
       background: #D15352;
     }
+    #github_link{
+        margin-top: 10vh;
+    }
     @media screen and (max-width: 600px) {
       #switch{
         display: block;
@@ -80,6 +89,11 @@
         border: solid 2vmin #D15352;
         color: #FFFFFF;
         background: #D15352;
+      }
+      #github_link{
+          color: #330000;
+          margin-top: 28vh;
+          text-align: right;
       }
     }
   </style>
