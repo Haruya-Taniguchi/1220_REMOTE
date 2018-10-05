@@ -2,85 +2,147 @@
 <html>
   <head>
     <title>1220_REMOTO</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   </head>
-  <body>
-    <p class="title">1220_REMOTO</p>
-    <p id="switch" ontouchstart="">ON</p>
+  <body bgcolor="#333333">
+    <div class="title">1220_REMOTO</div>
+    <div id="switch" ontouchstart="">
+        <p>ON</p>
+    </div>
+    <div id="reload">
+        <p>UPDATE</p>
+    </div>
   </body>
   <script>
+    window.onload = function(){
+        window.scrollTo(0,0);
+    }
     document.getElementById("switch").onclick = function(){
       location.href = "/OFF";
     };
+    document.getElementById("reload").onclick = function(){
+        location.href = "/"
+    };
   </script>
   <style>
+    body{
+          background-color: #F7F7F7;
+          font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+          width: 100vw;
+          height: 100vh;
+          margin: 0%;
+    }
     .title{
-      font-size: 20px;
-      margin-top: 0%;
+      margin: 0%;
       font-weight: bold;
       color: #FFFFFF;
       background: #333333;
-      width: 100%;
-    }
-    body{
-      background-color: #F7F7F7;
-      font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-      font-weight: 500;
-      height: 100%;
+      width: 100vw;
+      height: 5vh;
+      font-size: 3vh;
     }
     #switch{
+        margin-top: 25vh;
+        margin-bottom: 24vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #switch > p{
       display: block;
       text-decoration: none;
       color: #D15352;
-      width: 45vmin;
-      height: 45vmin;
-      line-height: 45vmin;
+      width: 40vh;
+      height: 40vh;
+      line-height: 40vh;
       border-radius: 50%;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 20vh;
-      margin-bottom: auto;
       background: #FFFFFF;
-      border: solid 1vmin #D15352;
+      border: solid 1vh #D15352;
       text-align: center;
-      font-size: 12vmin;
+      font-size: 12vh;
       vertical-align: middle;
       overflow: hidden;
       font-weight: bold;
-      transition: .2s;
     }
-    #switch:hover {
-      border: solid 1vmin #D15352;
+    #switch > p:hover {
       color: #FFFFFF;
       background: #D15352;
+      transition: .2s;
     }
-    @media screen and (max-width: 600px) {
-      #switch{
-        display: block;
-        text-decoration: none;
-        color: #D15352;
-        width: 50vw;
-        height: 50vw;
-        line-height: 50vw;
-        border-radius: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 30vh;
-        margin-bottom: auto;
-        background: #FFFFFF;
-        border: solid 2vmin #D15352;
-        text-align: center;
-        font-size: 18vmin;
-        vertical-align: middle;
-        overflow: hidden;
-        font-weight: bold;
-        transition: .1s;
-      }
-      #switch:hover {
-        border: solid 2vmin #D15352;
-        color: #FFFFFF;
-        background: #D15352;
-      }
+  #reload{
+      background: #F7F7F7;
+      color: #5C9C95;
+      border-radius: 0.5vh;
+      width: 8vw;
+      height: 4vh;
+      font-size: 2vh;
+      line-height: 4vh;
+      font-weight: bold;
+      margin: 0px;
+      margin-left: 92vw;
+      text-align: center;
+  }
+  #reload:hover{
+      background: #5C9C95;
+      color: #29354B;
+      transition: .2s
+  }
+
+  @media screen and (max-width: 600px) {
+        .title{
+            margin: 0%;
+            font-weight: bold;
+            text-align: left;
+            width: 100vw;
+            height: 5vh;
+            font-size: 3vh;
+        }
+        #switch{
+            margin-top: 30vh;
+            margin-bottom: 29vh;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #switch > p{
+            display: block;
+            text-decoration: none;
+            width: 30vh;
+            height: 30vh;
+            line-height: 30vh;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border: solid 1vh #D15352;
+            text-align: center;
+            font-size: 8vh;
+            vertical-align: middle;
+            overflow: hidden;
+            font-weight: bold;
+        }
+        #switch > p:hover {
+            color: #FFFFFF;
+            background: #D15352;
+            transition: .0s;
+        }
+        #reload{
+            border-radius: 0.5vh;
+            width: 25vw;
+            height: 3.8vh;
+            font-size: 2vh;
+            line-height: 3.8vh;
+            font-weight: bold;
+            margin: 0px;
+            margin-left: 75vw;
+            text-align: center;
+        }
+        #reload:hover{
+          background: #5C9C95;
+          color: #29354B;
+          transition: .0s;
+        }
     }
   </style>
 </html>
