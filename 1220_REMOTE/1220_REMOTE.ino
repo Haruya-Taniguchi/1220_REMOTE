@@ -102,15 +102,15 @@ void Turn_On() {
     tmp = index.readString();
     index.close();
   }
+  server.send(200, "text/html", tmp);
+  bgn = millis();
   servo.attach(SERVO_PIN);
   servo.write(50);
-  server.send(200, "text/html", tmp);
   //Serial.println("Turn ON!");
 }
 
 void Turn_Off() {
   light_pow = false;
-  bgn = millis();
 
   String tmp;
 
@@ -121,9 +121,10 @@ void Turn_Off() {
     tmp = index.readString();
     index.close();
   }
+  server.send(200, "text/html", tmp);
+  bgn = millis();
   servo.attach(SERVO_PIN);
   servo.write(90);
-  server.send(200, "text/html", tmp);
   //Serial.println("Turn OFF!");
 }
 
