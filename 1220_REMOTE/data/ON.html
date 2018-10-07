@@ -11,7 +11,7 @@
     <div id="switch" ontouchstart="">
         <p>ON</p>
     </div>
-    <div id="reload">
+    <div id="update">
         <p>UPDATE</p>
     </div>
   </body>
@@ -22,47 +22,48 @@
     document.getElementById("switch").onclick = function(){
       location.href = "/OFF";
     };
-    document.getElementById("reload").onclick = function(){
+    document.getElementById("update").onclick = function(){
         location.href = "/"
     };
   </script>
   <style>
     body{
-          background-color: #F7F7F7;
-          font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-          width: 100vw;
-          height: 100vh;
-          margin: 0%;
+      background-color: #F7F7F7;
+      font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+      width: 100vw;
+      height: 100vh;
+      margin: 0%;
     }
     .title{
-      margin: 0%;
-      font-weight: bold;
       color: #FFFFFF;
       background: #333333;
+      margin: 0%;
+      font-weight: bold;
+      text-align: left;
       width: 100vw;
       height: 5vh;
       font-size: 3vh;
     }
     #switch{
-        margin-top: 25vh;
-        margin-bottom: 24vh;
-        margin-left: auto;
-        margin-right: auto;
+     margin-top: 30vh;
+     margin-bottom: 29vh;
+     margin-left: auto;
+     margin-right: auto;
     }
     #switch > p{
+      color: #D15352;
+      background: #FFFFFF;
       display: block;
       text-decoration: none;
-      color: #D15352;
-      width: 40vh;
-      height: 40vh;
-      line-height: 40vh;
+      width: 30vh;
+      height: 30vh;
+      line-height: 30vh;
       border-radius: 50%;
       margin-left: auto;
       margin-right: auto;
-      background: #FFFFFF;
       border: solid 1vh #D15352;
       text-align: center;
-      font-size: 12vh;
+      font-size: 8vh;
       vertical-align: middle;
       overflow: hidden;
       font-weight: bold;
@@ -70,75 +71,25 @@
     #switch > p:hover {
       color: #FFFFFF;
       background: #D15352;
-      transition: .2s;
+      transition: .0s;
     }
-  #reload{
+    #update{
       background: #F7F7F7;
       color: #5C9C95;
       border-radius: 0.5vh;
-      width: 8vw;
-      height: 4vh;
+      width: 25vw;
+      height: 3.8vh;
       font-size: 2vh;
-      line-height: 4vh;
+      line-height: 3.8vh;
       font-weight: bold;
       margin: 0px;
-      margin-left: 92vw;
+      margin-left: 75vw;
       text-align: center;
-  }
-  #reload:hover{
+    }
+    #update:hover{
       background: #5C9C95;
       color: #29354B;
-      transition: .2s
-  }
-
-  @media screen and (max-width: 600px) {
-        .title{
-            margin: 0%;
-            font-weight: bold;
-            text-align: left;
-            width: 100vw;
-            height: 5vh;
-            font-size: 3vh;
-        }
-        #switch{
-            margin-top: 30vh;
-            margin-bottom: 29vh;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #switch > p{
-            display: block;
-            text-decoration: none;
-            width: 30vh;
-            height: 30vh;
-            line-height: 30vh;
-            border-radius: 50%;
-            margin-left: auto;
-            margin-right: auto;
-            border: solid 1vh #D15352;
-            text-align: center;
-            font-size: 8vh;
-            vertical-align: middle;
-            overflow: hidden;
-            font-weight: bold;
-        }
-        #switch > p:hover {
-            transition: .0s;
-        }
-        #reload{
-            border-radius: 0.5vh;
-            width: 25vw;
-            height: 3.8vh;
-            font-size: 2vh;
-            line-height: 3.8vh;
-            font-weight: bold;
-            margin: 0px;
-            margin-left: 75vw;
-            text-align: center;
-        }
-        #reload:hover{
-          transition: .0s;
-        }
+      transition: .0s;
     }
   </style>
 </html>
