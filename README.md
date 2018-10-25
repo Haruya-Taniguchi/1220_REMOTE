@@ -24,7 +24,7 @@
     - それらを壁に固定するもの(特に決まっていない)
 
 - セットアップ方法
-1. 下線部を使用するWiFiのSSIDとパスワードに書き換えてから、ESP8266にプログラムを書き込む。
+1. 下線部を使用するWiFiのSSIDとパスワードに書き換えてからESP8266にプログラムを書きこむ。また、SPIFFS機能を使ってフラッシュメモリにHTMLファイルを格納する。
     <div align="center"><img src="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/figure1.jpg?raw=true" alt="figure1"  width="80%"></div>
 
 2. 書き込みが終わったらPCに接続したままプログラムを実行させ、シリアルモニタからWiFiとの接続が成功した後に表示されるIPアドレスを確認する。
