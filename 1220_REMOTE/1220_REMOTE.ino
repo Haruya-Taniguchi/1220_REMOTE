@@ -56,7 +56,7 @@ void setup() {
     File index;
     if (light_pow) {
       index = SPIFFS.open("/ON.html", "r");
-    } else {
+    }else{
       index = SPIFFS.open("/OFF.html", "r");
     }
     if (!index)
@@ -92,39 +92,14 @@ void loop() {
 void Turn_On() {
   light_pow = true;
   bgn = millis();
-
-  String tmp;
-
-  File index = SPIFFS.open("/ON.html", "r");
-  if (!index)
-    Serial.println("file open failed");
-  else {
-    tmp = index.readString();
-    index.close();
-  }
-  server.send(200, "text/html", tmp);
-  bgn = millis();
   servo.attach(SERVO_PIN);
   servo.write(50);
-  //Serial.println("Turn ON!");
 }
 
 void Turn_Off() {
   light_pow = false;
-
-  String tmp;
-
-  File index = SPIFFS.open("/OFF.html", "r");
-  if (!index)
-    Serial.println("file open failed");
-  else {
-    tmp = index.readString();
-    index.close();
-  }
-  server.send(200, "text/html", tmp);
   bgn = millis();
   servo.attach(SERVO_PIN);
   servo.write(90);
-  //Serial.println("Turn OFF!");
+  
 }
-
