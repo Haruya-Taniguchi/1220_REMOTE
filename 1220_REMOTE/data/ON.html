@@ -2,8 +2,6 @@
   <head>
       <title>1220_REMOTO</title>
       <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
       <link rel="icon" type="image/png" href="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/iconS.png?raw=true">
       <link rel="apple-touch-icon" sizes="256x256" href="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/iconL.png?raw=true">
   </head>
@@ -20,21 +18,20 @@
     var state = true;//true: ON,false: OFF
     const sw = document.getElementById("switch");
     const request = new XMLHttpRequest();
+    var url = location.href;
     sw.onclick = function(){
       if(state){
-        var url = location.href+"OFF";
-        request.open("GET",url);
+        request.open("GET",url+"/OFF");
         state = false;
         sw.innerHTML="<p>OFF</p>";
         sw.style.color = "#29354B";
         console.log("turn OFF!!");
       }else{
-        var url = location.href+"ON";
-        request.open("GET",url);
-        state = true;
-        sw.innerHTML="<p>ON</p>";
-        sw.style.color = "#D15352";
-        console.log("turn ON!!");
+          request.open("GET",url+"/ON");
+          state = true;
+          sw.innerHTML="<p>ON</p>";
+          sw.style.color = "#D15352";
+          console.log("turn ON!!");
       }
       request.send();
     };
