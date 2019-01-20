@@ -30,15 +30,13 @@
 2. 書き込みが終わったらPCに接続したままプログラムを実行させ、シリアルモニタからWiFiとの接続が成功した後に表示されるIPアドレスを確認する。
     <div align="center"><img src="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/figure2.jpg?raw=true" alt="figure2" width="70%"></div>
 
-3. ON.htmlとOFF.htmlのscriptタグ内にあるIPアドレスを2.で確認したものに書き換える。
-
-4. 下の図を参考に部品をESP8266に接続する。サーボの信号線はIO2ピンに接続、 タクトスイッチはIO14ピンに接続する。(※今回自分が使用したのは図にある"Adafruit HUZZAH ESP8266 breakout"ではない。)
+3. 下の図を参考に部品をESP8266に接続する。サーボの信号線はIO2ピンに接続、 タクトスイッチはIO14ピンに接続する。(※今回自分が使用したのは図にある"Adafruit HUZZAH ESP8266 breakout"ではない。)
    <div align="center"> <img src="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/figure3.jpg?raw=true" alt="figure3" width="60%"></div>
 
-5. お好みの方法でフルカラースイッチ にサーボモーターなどを取り付ける。下の写真は取り付け方法の一例。
+4. お好みの方法でフルカラースイッチ にサーボモーターなどを取り付ける。下の写真は取り付け方法の一例。
     <div align="center"><img src="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/figure4.jpg?raw=true" alt="figure4" width="60%"></div>
 
-6. 電源をESP8266に接続する。電源から供給できる電流が少ないとサーボモーターのトルクが弱くなりフルカラースイッチを押せなくなるので注意。
+5. 電源をESP8266に接続する。電源から供給できる電流が少ないとサーボモーターのトルクが弱くなりフルカラースイッチを押せなくなるので注意。
 
 ## Usage
 1. ブラウザからSetupの2.で確認したIPアドレスにアクセスする。
