@@ -84,7 +84,7 @@ void loop() {
     Turn_Off();
   }
 
-  if ((millis() - bgn) > 2000) {
+  if ((millis() - bgn) > 1500) {
     servo.detach();
   }
 }
@@ -94,6 +94,7 @@ void Turn_On() {
   bgn = millis();
   servo.attach(SERVO_PIN);
   servo.write(50);
+  Serial.println("Turn On!");
 }
 
 void Turn_Off() {
@@ -101,5 +102,5 @@ void Turn_Off() {
   bgn = millis();
   servo.attach(SERVO_PIN);
   servo.write(90);
-  
+  Serial.println("Turn Off!");
 }
