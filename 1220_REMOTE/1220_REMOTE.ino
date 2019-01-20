@@ -12,8 +12,8 @@ bool pbutton, button;
 #include <ESP8266mDNS.h>
 #include <FS.h>
 
-const char *ssid = "";//SSID
-const char *pass = "";//パスワード
+const char *ssid = "iPhone";//SSID
+const char *pass = "taniharu468";//パスワード
 
 ESP8266WebServer server(80);
 
