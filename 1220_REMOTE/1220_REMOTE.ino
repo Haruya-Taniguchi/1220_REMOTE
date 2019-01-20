@@ -42,13 +42,14 @@ void setup() {
   }
 
   server.begin();
-
   server.on("/ON", []() {
-    Turn_On();
+    if(!light_pow)
+      Turn_On();
   } );
 
   server.on("/OFF", []() {
-    Turn_Off();
+    if(light_pow)
+      Turn_Off();
   } );
 
   server.on("/", []() {
