@@ -1,27 +1,21 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>1220_REMOTO</title>
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="icon" type="image/png" href="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/iconS.png?raw=true">
-    <link rel="apple-touch-icon" sizes="256x256" href="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/iconL.png?raw=true">　
-  <body bgcolor="#333333">
-    <div class="title">1220_REMOTO</div>
-    <div id="switch" ontouchstart="">
-        <p>OFF</p>
-    </div>
-    <div id="update">
-        <p>UPDATE</p>
-    </div>
-  </body>
+      <title>1220_REMOTO</title>
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+      <link rel="icon" type="image/png" href="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/iconS.png?raw=true">
+      <link rel="apple-touch-icon" sizes="256x256" href="https://github.com/Haruya-Taniguchi/1220_REMOTE/blob/images/images/iconL.png?raw=true">
+  </head>
+      <body>
+        <header>1220_REMOTE</header>
+        <div id="switch" ontouchstart="">
+          <p>OFF</p>
+        </div>
+        <div id="update">
+          <p>UPDATE</p>
+        </div>
+      </body>
   <script>
-    var state = false;
-    window.onload = function(){
-        window.scrollTo(0,0);
-    }
-
+    var state = false;//true: ON,false: OFF
     const sw = document.getElementById("switch");
     const request = new XMLHttpRequest();
     var url = location.href;
@@ -46,22 +40,20 @@
     };
   </script>
   <style>
-    body{
+    body {
       background-color: #F7F7F7;
       font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-      width: 100vw;
-      height: 100vh;
       margin: 0%;
     }
-    .title{
+    header {
+      text-align: left;
       color: #FFFFFF;
-      background: #333333;
-      margin: 0%;
       font-weight: bold;
       text-align: left;
-      width: 100vw;
+      background: #333333;
       height: 5vh;
       font-size: 3vh;
+      width: 100%;
     }
     #switch{
      margin-top: 30vh;
