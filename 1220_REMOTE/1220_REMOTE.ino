@@ -45,11 +45,13 @@ void setup() {
   server.on("/ON", []() {
     if(!light_pow)
       Turn_On();
+      server.send(200, "text/html", "Turn ON!!");
   } );
 
   server.on("/OFF", []() {
     if(light_pow)
       Turn_Off();
+      server.send(200, "text/html", "Turn OFF!!");
   } );
 
   server.on("/", []() {
