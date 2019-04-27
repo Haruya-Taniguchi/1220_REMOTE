@@ -45,13 +45,13 @@ void setup() {
   server.on("/ON", []() {
     if(!light_pow)
       Turn_On();
-      server.send(200, "text/html", "Turn ON!!");
+     server.send(200, "text/html", "");
   } );
 
   server.on("/OFF", []() {
     if(light_pow)
       Turn_Off();
-      server.send(200, "text/html", "Turn OFF!!");
+     server.send(200, "text/html", "");
   } );
 
   server.on("/", []() {
@@ -104,6 +104,6 @@ void Turn_Off() {
   light_pow = false;
   bgn = millis();
   servo.attach(SERVO_PIN);
-  servo.write(90);
+  servo.write(85);
   Serial.println("Turn Off!");
 }
