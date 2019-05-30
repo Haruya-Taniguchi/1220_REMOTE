@@ -45,7 +45,8 @@
 
 - ボタンには現在の照明の状態に合わせて"ON","OFF"の文字が表示される。ボタンの表示と実際の照明の状態が合致していないときなどは、右下にあるUPDATEボタンを押すとESP8266で記憶している照明の状態にあわせて表示を修正できる。
 - iOSの場合、safariで1220_REMOTEをホーム画面に追加してホーム画面から起動すると、フルスクリーンモードになりアプリのように扱うことができる。
-
+## 動画
+https://twitter.com/taniguchi36993/status/1048219162730946562?s=20
 ## Licence
 [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
 
